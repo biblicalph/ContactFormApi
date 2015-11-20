@@ -1,0 +1,8 @@
+<?php 
+	$mandrillConfig = array(
+		'apiKey' => 'UIzDbUwnBH4pled9VP311w',
+		// Email and password are not used by the app
+		'email' => 'bugscatcher.testing@gmail.com',
+		'password' => 'Catching_All_Bugs15'
+	);
+?>

@@ -1,0 +1,9 @@
+<?php 
+	$emailConfig = array(
+		'recipients' => array(
+			array('email' => 'bugscatcher.testing@gmail.com', 'name' => 'Bugs Catcher')
+		),
+		// Default subject for emails - would be use if mail subject is not provided by user
+		'subject' => 'New Mail for Bugs Catcher'
+	);
+?>

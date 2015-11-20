@@ -1,0 +1,15 @@
+{
+    "name": "bearsketchmedia/app",
+    "description": "Bear sketch application",
+    "require": {
+        "mandrill/mandrill": "^1.0",
+        "vlucas/phpdotenv": "^2.1"
+    },
+    "authors": [
+        {
+            "name": "Kwabena Boadu",
+            "email": "shadrack.boadu@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
