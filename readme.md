@@ -1,24 +1,38 @@
 # Website Contact Form Api - PHP Script
 
-The application allows you to add contact form easily to your website. 
+The application allows you to add a contact form to your website. Messages sent via the contact form will be delivered to an email you provide during the setup.
 
-Setup a form on your website and add **API_DOMAIN/classes/ContactUs.php** as the 
-form action where **API_DOMAIN** is the server domain 
+### Setting up the api
+The application uses Mandrill for sending emails. Setup a mandrill account and generate your **_APIKEY_**
 
-Next setup a contact form with the following fields: 
+Create a .env file in the root of this project, copy the contents of *.env.example* and edit to your specific information. 
 
-* fromEmail - email address field of contact form
-* fromName - client name field of contact form
-* subject (optional) - subject field of contact form 
-* message - message field of contact form 
+### Setting up your contact form 
+Setup a form on your website and add **DOMAIN/classes/ContactUs.php** as the 
+form action where **DOMAIN** is the server domain 
 
-**NB:** The contact form must have an id of contact-form
+Next setup a contact form as indicated below (style to your liking): 
 
-Finally, write add the following javascript code to handle posting the contact request to the server. 
+```
+<form action="DOMAIN/classes/ContactUs.php" method="post" id="contact-form" accept-charset="UTF-8">
+	<label for="name">Your Name</label>
+	<input type="text" name="fromName" id="name" /><br/>
+	<label for="email">Your Email</label>
+	<input type="text" name="fromEmail" id="email" /><br/>
+	<label for="subject">Subject</label>
+	<input type="text" name="subject" id="subject" /><br/>
+	<label for="message">Message</label>
+	<textarea name="message" id="message"></textarea><br/>
+	<button type="submit">Send Message</button>
+</form>
+```
+
+Finally, the following javascript code before the closing body tag of your website page. This will  handle posting the contact request to the server. 
 
 **NB:** Jquery is required for this to work
 
 ```
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
       $("#contact-form").submit(function(event) {
